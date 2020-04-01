@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {DISHES} from '../../shared/dishes';
+import { Dish } from 'src/shared/dish';
 // import { Dish } from 'src/shared/dish';
 
 @Injectable({
@@ -10,7 +11,7 @@ export class DishService {
 
   constructor() { }
 
-  getdishes(){
+  getdishes():Dish[]{
     return DISHES;
   }
 
