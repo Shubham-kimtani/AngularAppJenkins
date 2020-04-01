@@ -11,7 +11,7 @@ export class DishService {
 
   constructor() { }
 
-  getdishes():Dish[]
+  getdishes()
   {
     return DISHES;
   }
