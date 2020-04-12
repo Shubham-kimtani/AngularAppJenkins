@@ -16,5 +16,7 @@ export class DishService {
     return DISHES;
   }
 
+  getDishById = (id) => DISHES.filter((dish) => (dish.id===id))[0];
+
 
 }

@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import {RoutingModule } from './routing/routing.module';
 import { HelloComponent } from './hello/hello.component';
 import { DishService } from './services/dish.service';
+import { DishdetailComponent } from './dishdetail/dishdetail.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { DishService } from './services/dish.service';
     MenuComponent,
     HomeComponent,
     HelloComponent,
+    DishdetailComponent,
 
   ],
   imports: [
