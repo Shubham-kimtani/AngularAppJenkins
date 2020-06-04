@@ -5,6 +5,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatListModule } from "@angular/material/list";
+import {MatDialogModule} from "@angular/material/dialog";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatInputModule} from "@angular/material/input";
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
+import {MatSelectModule} from '@angular/material/select';
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import {FormsModule} from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
 import 'hammerjs';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -15,6 +24,8 @@ import {RoutingModule } from './routing/routing.module';
 import { HelloComponent } from './hello/hello.component';
 import { DishService } from './services/dish.service';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +36,8 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
     HomeComponent,
     HelloComponent,
     DishdetailComponent,
+    LoginComponent,
+    SignupComponent,
 
   ],
   imports: [
@@ -34,7 +47,20 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
     FlexLayoutModule,
     MatToolbarModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatSlideToggleModule,
+    MatProgressSpinnerModule
+  ],
+  entryComponents: [
+    LoginComponent,  //Login modle leverages the dialog component.thats why
+    SignupComponent   
   ],
   providers: [DishService],
   bootstrap: [AppComponent]

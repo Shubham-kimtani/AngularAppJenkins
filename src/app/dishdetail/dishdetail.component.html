@@ -1,6 +1,6 @@
 <div class="container"
      fxLayout="column"
-     fxLayoutGap="10px">
+     fxLayoutGap="10px" >
 
 
       <img matListAvatar src={{dish.image}} alt={{dish.name}}>
@@ -10,5 +10,8 @@
       </p>
    
  <button mat-button (click)="goBack()">Go Back</button>
-
+ 
+</div>
+<div [hidden]="dish" fxFlex>
+  <mat-spinner>hello</mat-spinner>
 </div>

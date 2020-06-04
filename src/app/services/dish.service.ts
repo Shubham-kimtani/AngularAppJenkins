@@ -7,16 +7,8 @@ import { Dish } from 'src/shared/dish';
   providedIn: 'root'
 })
 export class DishService {
-
-
   constructor() { }
-
-  getdishes()
-  {
-    return DISHES;
+  getdishes(): Promise<Dish[]>{return new Promise((resolve) => setTimeout(() => {resolve(DISHES)},5000))}
+  getDishById(id): Promise<Dish>{return new Promise(resolve => {setTimeout(() => resolve(DISHES.filter((dish) => (dish.id===id))[0]),5000)});
   }
-
-  getDishById = (id) => DISHES.filter((dish) => (dish.id===id))[0];
-
-
 }

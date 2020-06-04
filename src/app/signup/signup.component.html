@@ -1,0 +1,34 @@
+<mat-toolbar color="primary">
+  Sign up
+  <button mat-button mat-dialog-close>&times;</button>
+</mat-toolbar>
+<!-- {{feedbackform.value | json}}  {{ feedbackform.status}} -->
+<form novalidate [formGroup]="feedbackform" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input matInput type="text" formControlName="firstname" placeholder="First Name">
+    <mat-error *ngIf="formErrors.firstname">{{formErrors.firstname}}</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="text" formControlName="lastname" placeholder="Last Name">
+    <mat-error *ngIf="formErrors.lastname">{{formErrors.lastname}}</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="email" formControlName="email" placeholder="Email">
+    <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="number" formControlName="telnum" placeholder="Phone" pattern="[0-9]{10}">
+    <mat-error *ngIf="formErrors.telnum">{{formErrors.telnum}}</mat-error>
+  </mat-form-field>
+   <mat-select formControlName="contacttype" placeholder="How?">
+    <mat-option *ngFor="let c of contactType" value="c">{{c}}</mat-option>
+   </mat-select>
+    <mat-slide-toggle formControlName="agree" >
+    </mat-slide-toggle>
+    <mat-form-field>
+      <textarea matInput placeholder="Feedback" formControlName="feedback"></textarea>
+
+    </mat-form-field>
+ 
+ <button mat-button [disabled]="feedbackform.invalid">Submit</button>
+</form>
